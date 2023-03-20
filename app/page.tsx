@@ -1,5 +1,11 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
+function getNextDayOfWeek(date: Date, dayOfWeek: number) {
+  var resultDate = new Date(date.getTime());
+  resultDate.setDate(date.getDate() + (7 + dayOfWeek - date.getDay()) % 7);
+  return resultDate;
+}
+
 export default async function Home() {
   const doc = new GoogleSpreadsheet("1o0MRNNuKSikLnYuEk-bAEZgjA6S7N9uJDgqcwqrhbUE");
 
@@ -12,7 +18,7 @@ export default async function Home() {
 
   const sheet = doc.sheetsByTitle["bread"];
   const rows = await sheet.getRows();
-  const today = new Date();
+  const today = getNextDayOfWeek(new Date(), 0);
   const sorted = rows.sort((a, b) => {
     const distA = Math.abs(today.getTime() - Date.parse(a.date));
     const distB = Math.abs(today.getTime() - Date.parse(b.date));
