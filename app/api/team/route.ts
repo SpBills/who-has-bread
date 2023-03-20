@@ -13,7 +13,7 @@ export async function GET(_: Request) {
     return distA - distB;
   });
 
-  const current = sorted[0];
+  const { person, date } = sorted[0];
 
-  return NextResponse.json(current);
+  return NextResponse.json({ person, date });
 }

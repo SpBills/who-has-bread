@@ -10,7 +10,7 @@ export default async function Home() {
         <div className="mt-10">
           <h2 className="text-3xl font-semibold">Next week:</h2>
           <div className="mt-5">
-            <Who />
+            <Who path={`/api/bread`} />
           </div>
         </div>
       </div>
