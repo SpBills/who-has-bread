@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Who has bread?',
+  title: 'Who has Bread?',
   description: 'An application for Living Water OPC',
 }
 

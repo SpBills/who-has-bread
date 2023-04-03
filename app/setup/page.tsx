@@ -1,13 +1,4 @@
 import { Who } from "@/components/Who";
-import { GoogleSpreadsheet } from "google-spreadsheet";
-
-function getNextDayOfWeek(date: Date, dayOfWeek: number) {
-  var resultDate = new Date(date.getTime());
-  resultDate.setDate(date.getDate() + (7 + dayOfWeek - date.getDay()) % 7);
-  return resultDate;
-}
-
-export const revalidate = 3600;
 
 export default async function Setup() {
   return (
