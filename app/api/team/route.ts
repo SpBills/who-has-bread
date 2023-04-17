@@ -2,6 +2,8 @@ import { getNextDayOfWeek } from "@/lib/dates";
 import { getSheet } from "@/lib/sheets";
 import { NextResponse } from "next/server";
 
+export const revalidate = 600;
+
 export async function GET(_: Request) {
   const doc = await getSheet();
   const sheet = doc.sheetsByTitle["setup"];
